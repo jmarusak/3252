@@ -1,1 +1,1 @@
-# OFX Conventer to JSON Scala Library 
+# OFX Converter to JSON Scala Library 
