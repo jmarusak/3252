@@ -1,1 +1,1 @@
-# OFX Converter to JSON Scala Library 
+# Rational numbers Scala library 
