@@ -1,3 +1,3 @@
 class Rational(n: Int, d: Int) {
-  println(s"Created $n/$d")
+  override def toString = s"$n/$d"
 }
