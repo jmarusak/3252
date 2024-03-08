@@ -1,1 +1,3 @@
-class Rational(n: Int, d: Int)
+class Rational(n: Int, d: Int) {
+  println(s"Created $n/$d")
+}
