@@ -1,4 +1,4 @@
-name := "rational"
+name := "3252"
 version := "1.0"
 scalaVersion := "2.12.18"
 

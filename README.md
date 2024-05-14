@@ -1,1 +1,0 @@
-# Rational numbers Scala library 

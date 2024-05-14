@@ -1,8 +1,14 @@
+data
 target/
 .history
 .cache
 .lib/
 .bsp/
+.vscode
+.metals/
+.bloop/
+.scala-build/
 
 *.class
 *.log
+*.swp
