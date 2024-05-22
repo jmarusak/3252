@@ -4,7 +4,7 @@ SELECT
   cu.company,
   cu.city,
   cu.state
-FROM main.customers cu
+FROM customers cu
 ORDER BY cu.city;
 
 --1b: Modify your query to only return customers from Canada or the United States
@@ -13,7 +13,7 @@ SELECT
   cu.company,
   cu.city,
   cu.state
-FROM main.customers cu
+FROM customers cu
 WHERE cu.country IN ("Canada", "USA")
 ORDER BY cu.city;
 
@@ -23,7 +23,7 @@ SELECT
   cu.company,
   cu.city,
   cu.state
-FROM main.customers cu
+FROM customers cu
 WHERE cu.country IN ("Canada", "USA")
   AND cu.lastname LIKE "M%"
 ORDER BY cu.city;
@@ -34,9 +34,9 @@ SELECT
   al.title AS album,
   tr.name AS track
 FROM
-  main.artists ar,
-  main.albums al,
-  main.tracks tr
+  artists ar,
+  albums al,
+  tracks tr
 WHERE ar.artistid = al.artistid
   AND al.albumid = tr.albumid
 ORDER BY ar.name;
@@ -47,9 +47,9 @@ SELECT
   al.title AS album,
   tr.name AS track
 FROM 
-  main.artists ar,
-  main.albums al,
-  main.tracks tr
+  artists ar,
+  albums al,
+  tracks tr
 WHERE ar.artistid = al.artistid
   AND al.albumid = tr.albumid
   AND tr.name LIKE "%dancing%"
@@ -59,23 +59,23 @@ ORDER BY ar.name;
 SELECT
   em.firstname||" "||em.lastname AS employee,
   mr.firstname||" "||mr.lastname AS manager
-FROM main.employees em
-  INNER JOIN main.employees mr ON em.reportsto = mr.employeeid;
+FROM employees em
+  INNER JOIN employees mr ON em.reportsto = mr.employeeid;
 
 --2d: When you review the list you notice that the General Manager, Andrew Adams, is not included on the list.  Modify your query 
 SELECT
   em.firstname||" "||em.lastname AS employee,
   IFNULL(mr.firstname||" "||mr.lastname, "reports to himself") AS manager
-FROM main.employees em
-  LEFT OUTER JOIN main.employees mr ON em.reportsto = mr.employeeid;
+FROM employees em
+  LEFT OUTER JOIN employees mr ON em.reportsto = mr.employeeid;
 
 --3a: Create a report that that Joins the Albums to Tracks table and returns the title of each album and the number of tracks it contains.
 SELECT
   al.title,
   COUNT(tr.trackid) AS "numoftracks"
 FROM
-  main.albums al,
-  main.tracks tr
+  albums al,
+  tracks tr
 WHERE al.albumid = tr.albumid
 GROUP BY al.title;
 
@@ -84,8 +84,8 @@ SELECT
   al.title,
   COUNT(tr.trackid) AS "numoftracks"
 FROM
-  main.albums al,
-  main.tracks tr
+  albums al,
+  tracks tr
 WHERE al.albumid = tr.albumid
 GROUP BY al.title
 HAVING COUNT(tr.trackid) > 10;

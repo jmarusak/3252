@@ -6,7 +6,7 @@ object SingleThreadedApp {
   def load(filename: String): List[String] =
     Source.fromFile(filename).getLines().toList
 
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     val corpus: List[String] = load("corpus.txt")
 
     var mapped = List.empty[(String, Int)]

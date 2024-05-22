@@ -2,4 +2,4 @@ name := "3252"
 version := "1.0"
 scalaVersion := "2.12.18"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
+libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test
