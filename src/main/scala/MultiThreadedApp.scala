@@ -13,7 +13,7 @@ object MultiThreadedApp {
     println(s"[$now] Thread: ${Thread.currentThread().getName}")
   }
 
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     val corpus: List[String] = load("corpus.txt")
 
     var mapped = List.empty[(String, Int)]
